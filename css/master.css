@@ -1,0 +1,183 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* redondeamos los bordes de los iconos de las redes sociales */
+img[src$='.svg']{
+  border-radius: 10px;
+}
+
+/**********************************************************************/
+/**************************** CSS for Body ****************************/
+body {
+  background: #02010a;
+  font-family: 'Dancing Script', cursive;
+}
+
+.contenido {
+  width: 80%;
+  margin: auto;
+
+  /* Flexbox */
+	display: flex;
+	flex-flow: row wrap;
+}
+
+/**********************************************************************/
+/*************************** CSS for Header ***************************/
+header {
+  width:100%;
+  padding:20px;
+  background:#5b7989;
+  border-radius: 10px 10px 0 0;
+
+	/* Flexbox */
+	display: flex;
+  flex-flow: row wrap;
+	justify-content:space-between;
+	align-items:center;
+
+  /* Animación CSS */
+  animation: slideHeader 2s;
+}
+
+/* Estilo para alinear el logo y el título */
+header .logoPage {
+  /* Flexbox */
+  display: flex;
+  flex-grow: row wrap;
+  align-items: center;
+}
+
+header .logoPage img {
+  width: 100px;
+	vertical-align: top;
+  border-radius: 30px;
+}
+
+header .logoPage a {
+  font-size: 30px;
+  padding-left: 10px;
+  color:#fff;
+  /* eliminamos el subrayado del enlace */
+  text-decoration: none;
+  /* Efecto sombra de texto 2px */
+  text-shadow: 2px 2px #02010a;
+  /* alto necesario para diseño responsivo */
+  line-height: 50px;
+}
+
+header nav {
+  /* ancho del contenedor del menú principal */
+  width: 30%;
+
+  /* Flexbox */
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+header nav a {
+  background: #c0392b;
+  color: #fff;
+  text-decoration: none; /* eliminamos subrayado de los enlaces del menú */
+  padding: 7px; /* formato boton a los enlaces del menú */
+  border-radius: 15px; /* border redondeado a los elementos del menú  */
+
+  /* Flexbox */
+  flex-grow: 1;
+  text-align: center; /* necesario al utilizar flex-grow */
+}
+
+header nav a:hover {
+  background:#e74c3c;
+}
+
+
+/**********************************************************************/
+/************************ CSS for section Main ************************/
+.main {
+  background: #fff;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/**********************************************************************/
+/*************************** CSS for Footer ***************************/
+footer {
+  background: #C6d5c5;
+  border-radius: 0 0 10px 10px;
+  padding: 20px;
+  width: 100%;
+
+  /* Flexbox */
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+
+footer > div {
+  line-height: 25px; /* interlineado del texto */
+}
+
+footer h3 {
+  color: black;
+  font-size: 18px;
+}
+
+footer ul {
+  padding-left: 10px;
+  /* Eliminamos viñetas de las listas */
+  list-style-type: none;
+}
+
+footer a {
+  /* Color blanco a los links (hipervínculos) */
+  color: black;
+  /* Eliminamis subrayado de los links (hipervínculos) */
+  text-decoration: none;
+}
+
+
+/**********************************************************************/
+/*************************** Animacion CSS ****************************/
+@keyframes slideHeader {
+  0% {
+    margin-top: 150%;
+  }
+  60% {
+    margin-top: -5%;
+  }
+  100% {
+    margin-top: 0%;
+  }
+}
+
+/**********************************************************************/
+/************************* CSS media queries **************************/
+@media screen and (max-width: 900px) {
+  .contenido {
+    flex-direction: column;
+  }
+
+  header {
+    flex-direction: column;
+  }
+
+  header nav {
+    margin-top: 10px;
+    width: 100%;
+  }
+
+  footer {
+    flex-direction: column;
+    padding: 10px 15px;
+  }
+
+  footer > div {
+    margin-bottom: 15px;
+  }
+}

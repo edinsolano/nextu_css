@@ -1,0 +1,114 @@
+/* consideración general: efecto de sombra para las imágenes del index */
+.main img {
+  filter: drop-shadow(2px 2px 10px #02010a);
+}
+
+
+/******************************************************************************/
+/******************************* CSS IMG SUPERIOR *****************************/
+#mainSup {
+  background: #82c3a6;
+  width: 100%;
+  padding: 10px;
+
+  /* Flexbox */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#mainSup > div {
+  border: 1px solid;
+  border-radius: 10px;
+  text-align: center;
+  background: #e4e4e4; /* color de fondo para la imagen superior */
+  width: 50%;
+  padding: 10px;
+}
+
+#mainSup figure {
+  margin: 5px;
+  /* Flexbox */
+  /* Utilizo flex para centrar la imagen dentro del div y cubrir todo su contenido */
+  display: flex;
+  align-items: center;
+}
+
+#mainSup img {
+  width: 100%;
+}
+
+/******************************************************************************/
+/****************************** CSS IMG INGERIOR ******************************/
+#mainInf {
+  background: #d5c75f;
+  width: 100%;
+
+  /* Flexbox*/
+  /* Los div padres, contenedor de las imágenes se alinean horizontalmente */
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.imgInf {
+  width: 50%;
+  padding: 10px;
+
+  /* Flexbox para centrar los dos contenedores de la img inferior */
+  display: flex;
+  justify-content: center;
+}
+
+.imgInf > div {
+  border: 1px solid;
+  border-radius: 10px;
+  background: #e4e4e4; /* color de fondo para imágenes inferiores */
+  width: 90%;
+  padding: 10px;
+  text-align: center;
+
+  /* Flexbox para centrar el contenido de cada div contenedor de imagen */
+  display: flex;
+  align-items: center;
+}
+
+.imgInf figure {
+  /* Flexbox para que la imagen cubra todo el contenido del div */
+  display: flex;
+  align-items: center;
+}
+
+.imgInf img {
+  width: 100%;
+}
+
+/* Efecto al pasar el cursor sobre la img. izq. */
+.imgIzq img:hover {
+  /* borde 2px*/
+  border: 2px solid;
+  /* rotación de 10° */
+  transform: rotate(10deg);
+  /* efecto de sombra */
+  /* drop-shadow(h-shadow v-shadow blur spread color) */
+  filter: drop-shadow(10px 10px 12px #82c3a6);
+}
+
+/* Efecto al pasar el cursor sobre la img. der. */
+.imgDer img:hover {
+  /* borde 2px*/
+  border: 2px solid;
+  /* traslación X:20px; Y:-5px */
+  transform: translate(20px, -5px);
+  /* efecto de sombra */
+  filter: drop-shadow(10px 10px 12px #82c3a6);
+}
+
+
+/**********************************************************************/
+/************************* CSS media queries **************************/
+@media screen and (max-width: 900px) {
+  #mainInf {
+    flex-direction: column;
+    align-items: center;
+  }
+}

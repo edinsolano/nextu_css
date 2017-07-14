@@ -1,0 +1,72 @@
+.galeria {
+  width: 100%;
+  padding: 10px;
+
+  /* flexbox */
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
+}
+
+.galeria > div {
+  border: 1px solid;
+  width: 30%;
+  text-align: center;
+  padding: 5px;
+  background: #e4e4e4; /* color de fondo para las imagenes */
+  border-radius: 5px;
+
+  /* flexbox para centrar el contenedor figure*/
+  display: flex;
+  align-items: center;
+}
+
+.galeria figure {
+  /* centramos la imagen dentro de figure, si no se aplica esta propiedad
+     queda un espacio en inferior que lo podemos visualizar utilizando
+     un borde.
+   */
+  display: flex;
+  align-items: center;
+}
+
+.galeria img {
+  width: 100%;
+}
+
+/**********************************************************************/
+/************************ Filtros a imágenes **************************/
+
+/* filtro blur */
+#imagen1 {
+  filter: blur(10px);
+}
+/* escala grises al 100% */
+#imagen2, #imagen4, #imagen6 {
+  filter: grayscale(100%);
+}
+
+/* efecto sepia 90% */
+#imagen3 {
+  filter: sepia(90%);
+}
+
+
+/**********************************************************************/
+/************************* CSS media queries **************************/
+@media screen and (max-width: 900px) {
+  .main {
+    padding-top: 10px;
+  }
+
+  .galeria {
+    padding: 0;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .galeria > div {
+    width: 80%;
+    margin-bottom: 10px;
+  }
+}
